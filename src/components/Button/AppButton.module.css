@@ -1,0 +1,33 @@
+.button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+.default {
+    background-color: #1677ff;
+    color: white;
+}
+
+.active:hover {
+    background-color: #2decb3;
+}
+
+.active {
+    background-color: #45f4c0;
+}
+button:hover {
+    background-color: #0568f3;
+}
+
+button:active {
+    background-color: #25287f;
+}
+
+button:disabled {
+    background-color: rgb(162, 162, 162);
+    cursor: not-allowed;
+    color: rgb(243, 249, 246, 0.8);
+}
