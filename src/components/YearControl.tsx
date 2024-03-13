@@ -36,8 +36,10 @@ function YearControl() {
                     <CustomButton
                         onClick={increaseYear}
                         isActive={year !== currentYear}
+                        defaultText='+'
+                        activeText='увеличен на'
                     >
-                        + {count}
+                        {count}
                     </CustomButton>
                     <CustomButton
                         disabled={year === currentYear}

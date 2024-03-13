@@ -6,12 +6,16 @@ interface CustomButtonProps
     onClick: () => void;
     isActive?: boolean;
     children: React.ReactNode;
+    activeText?: string;
+    defaultText?: string;
 }
 
 const CustomButton = ({
     children,
     onClick,
     isActive = false,
+    activeText,
+    defaultText,
     ...props
 }: CustomButtonProps) => {
     const [isClicked, setIsClicked] = useState(false);
@@ -29,7 +33,7 @@ const CustomButton = ({
                 isClicked && isActive ? S.active : S.default
             }`}
         >
-            {children}
+            {isClicked && isActive ? activeText : defaultText} {children}
         </button>
     );
 };
