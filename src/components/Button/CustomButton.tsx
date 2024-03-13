@@ -3,8 +3,7 @@ import { useState } from 'react';
 
 interface CustomButtonProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    onClick?: () => void;
-    isYearChanged?: boolean;
+    onClick: () => void;
     isActive?: boolean;
     children: React.ReactNode;
 }
@@ -19,9 +18,7 @@ const CustomButton = ({
 
     const handleClick = () => {
         setIsClicked(true);
-        if (onClick) {
-            onClick();
-        }
+        onClick();
     };
 
     return (

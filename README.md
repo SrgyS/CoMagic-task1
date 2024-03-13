@@ -1,30 +1,45 @@
-# React + TypeScript + Vite
+# React приложение с использованием хуков useState и useEffect
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Это простое React приложение, созданное без использования state менеджеров, только с помощью хуков useState и useEffect.
 
-Currently, two official plugins are available:
+## Демонстрация
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://main--comagic-task1.netlify.app/
 
-## Expanding the ESLint configuration
+## Функциональность
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1.  **Отображение текущего года:** В разделе "Год" отображается текущий год и предоставляет возможность его изменения путем нажатия на кнопку.
 
-- Configure the top-level `parserOptions` property like this:
+2.  **Компонент кнопки:** Кнопка для изменения года меняет цвет и текст внутри себя при нажатии.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+3.  **Форма с полями ввода:** В разделе "Заполнить форму" страница содержит форму с полями ввода, текстовым полем и кнопкой отправки. Форма обрабатывает введенные данные и после отправки отображает их в новом окне "Данные формы".
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+4.  **Использование React Router:** Приложение использует React Router для создания нескольких страниц и возможности перехода между ними.
+
+## Технологии
+
+-   React
+
+-   Ant Design
+
+-   React Router
+
+## Установка
+
+1. Клонируйте репозиторий:
+
+git clone https://github.com/SrgyS/CoMagic-task1.git
+
+2. Установите зависимости:
+
+cd CoMagic-task1
+
+npm install
+
+3. Запустите приложение:
+
+npm run dev
+
+## Автор
+
+Sergei Stepanov
