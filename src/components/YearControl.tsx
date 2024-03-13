@@ -1,8 +1,9 @@
-import { Card, Space, Typography } from 'antd';
+import { Card, Grid, Space, Typography } from 'antd';
 
 import CustomButton from './Button/CustomButton';
 import { useState } from 'react';
 
+const { useBreakpoint } = Grid;
 const { Title, Paragraph } = Typography;
 function YearControl() {
     const currentYear = new Date().getFullYear();
@@ -14,7 +15,7 @@ function YearControl() {
         setYear((prevYear) => prevYear + 1);
         setCount((count) => count + 1);
     };
-
+    const screens = useBreakpoint();
     const resetYear = () => {
         setYear(currentYear);
         setCount(0);
@@ -25,14 +26,19 @@ function YearControl() {
     return (
         <Card style={{ maxWidth: 600, margin: '0 auto' }}>
             <Space direction='vertical' style={{ width: '100%' }}>
-                <Title level={3}>Текущий год {currentYear}</Title>
+                <Title level={screens['xs'] ? 4 : 3}>
+                    Текущий год {currentYear}
+                </Title>
                 <Paragraph>
                     Вы можете изменить текущий год: <strong>{year}</strong>
                 </Paragraph>
                 <Paragraph style={{ fontStyle: 'italic' }}>
                     На пути в будущее: нажми +, чтобы сделать шаг вперёд!
                 </Paragraph>
-                <Space>
+                <Space
+                    direction={screens['xs'] ? 'vertical' : 'horizontal'}
+                    wrap
+                >
                     <CustomButton
                         onClick={increaseYear}
                         isActive={year !== currentYear}

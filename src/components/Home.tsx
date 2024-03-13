@@ -1,17 +1,21 @@
-import { Divider, Typography } from 'antd';
+import { Divider, Grid, Typography } from 'antd';
 
 const { Title, Text, Paragraph } = Typography;
+const { useBreakpoint } = Grid;
 
 export default function Home() {
+    const screens = useBreakpoint();
     return (
-        <div style={{ maxWidth: 800, margin: '0 auto', padding: '24px' }}>
-            <Title>Первое задание на стажировке в компании CoMagic</Title>
+        <div style={{ maxWidth: 800, margin: '0 auto' }}>
+            <Title level={screens['xs'] ? 4 : 2}>
+                Первое задание на стажировке в компании CoMagic
+            </Title>
             <Paragraph>
                 Это простое React приложение, созданное без использования state
                 менеджеров, только с помощью хуков useState и useEffect.
             </Paragraph>
             <Divider />
-            <Title level={3}>Функциональность</Title>
+            <Title level={screens['xs'] ? 5 : 3}>Функциональность</Title>
             <Paragraph>
                 В разделе "Год" отображается текущий год и предоставляется
                 возможность его изменения путем нажатия на кнопку{' '}

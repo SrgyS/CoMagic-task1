@@ -50,6 +50,8 @@ const AppLayout: React.FC = () => {
                 collapsible
                 collapsed={collapsed}
                 onCollapse={(value) => setCollapsed(value)}
+                breakpoint='md'
+                collapsedWidth={40}
             >
                 <Menu
                     theme='dark'
@@ -60,7 +62,9 @@ const AppLayout: React.FC = () => {
                 />
             </Sider>
             <Layout>
-                <Content style={{ padding: '3rem', background: '#f0f4fa' }}>
+                <Content
+                    style={{ padding: '3rem 1rem', background: '#f0f4fa' }}
+                >
                     <Outlet />
                 </Content>
             </Layout>
