@@ -1,5 +1,6 @@
 import AppForm from '../components/AppForm';
 import AppLayout from '../components/AppLayout';
+import ErrorPage from '../components/ErrorPage';
 import FormData from '../components/FormData';
 import Home from '../components/Home';
 import YearControl from '../components/YearControl';
@@ -9,6 +10,7 @@ export const router = createBrowserRouter([
     {
         path: '/',
         element: <AppLayout />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 index: true,

@@ -8,6 +8,7 @@ interface CustomButtonProps
     children: React.ReactNode;
     activeText?: string;
     defaultText?: string;
+    size?: 'sm' | 'md' | 'lg';
 }
 
 const CustomButton = ({
@@ -16,6 +17,7 @@ const CustomButton = ({
     isActive = false,
     activeText,
     defaultText,
+    size = 'md',
     ...props
 }: CustomButtonProps) => {
     const [isClicked, setIsClicked] = useState(false);
@@ -31,7 +33,7 @@ const CustomButton = ({
             onClick={handleClick}
             className={`${S.button} ${
                 isClicked && isActive ? S.active : S.default
-            }`}
+            } ${S[size]}`}
         >
             {isClicked && isActive ? activeText : defaultText} {children}
         </button>
